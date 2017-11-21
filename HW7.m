@@ -89,13 +89,16 @@ end
 % this system. Your model should have one free parameter corresponding to the
 % maximum rate of expression of the gene, call it V. 
 
-% dA/dt = V*B^4/((1+B^4)-A), dB/dt = V*A^4/((1+A^4)-B)
+% Taken from lecture 22, dx/dt = (ku + kb(R/K)^n)/(1+(R/K)^n) - x, ku = 0, kb = V,
+% R/K = A or B, x = B or A
+
+% dA/dt = V*B^4/((1+B^4))-A, dB/dt = V*A^4/((1+A^4))-B
 %
 % Part 2. Write code to integrate your model in time and plot the results for V = 5 for two cases, 
 % one in which A0 > B0 and one in which B0 > A0. 
 clear all;
 V = 5;
-rhs = @(t,x) [(V*x(2)^4)/(1+x(2)^4)-x(1); (V*x(1)^4)/(1+x(1)^4)-x(2)];
+rhs = @(t,x) [((V*x(2)^4)/(1+x(2)^4))-x(1); ((V*x(1)^4)/(1+x(1)^4))-x(2)];
 
 %B0 > A0
 sol = ode23(rhs, [0 10],[2,4]);
@@ -115,7 +118,7 @@ plot(sol.x, sol.y(2,:));
 % Part 3. By any means you want, write code to produce a bifurcation diagram showing all
 % fixed points of the system as a function of the V parameter. 
 
-gxfunc = @(x,V) (V*x^4)/(1+x^4)-x;
+gxfunc = @(x,V) ((V*x^4)/(1+x^4))-x;
 for V = 1:0.1:5
     gxfunc2 = @(x) gxfunc(x,V);
     for xo = 1:0.1:5
