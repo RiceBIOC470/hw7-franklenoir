@@ -1,6 +1,6 @@
 %HW7
 %GB Answer
-1a 70 There are two fixed points. One at 0 because a population of 0 people can’t reproduce. Any fluctuation outside of that are stably fixed at 1 because this is the carrying capacity for that population of people. At the point, the rate of growth is greatly reduced
+1a 70 There are two fixed points. One at 0 because a population of 0 people can’t reproduce. Any fluctuation outside of that are stably fixed at 1 because this is the carrying capacity for that population. At the point, the rate of growth is greatly reduced
 1b. 70 you are correct, ‘a’ does not change the stability of the system. However, it does determine how quickly perturbations in X will correct towards the stable point. 
 1c. 100
 1d. 90 no axis labels and no discussion on how the number of fixed points evolves. 
